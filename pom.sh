@@ -10,8 +10,8 @@ cat << "EOF"
 
 EOF
 
-work_time=18
-rest_time=3
+work_time=1800
+rest_time=300
 
 prog() {
     local w=80 p=$1;  shift
@@ -27,14 +27,14 @@ echo "==========================================================================
 # test loop
 for x in {1..100} ; do
     prog "$x" still working...
-    sleep 0.1   # do some work here
+    sleep 18   # do some work here
 done ; echo
 echo "============================================================================" && echo "$(tput setaf 2)Your pomodoro session just ended. Have a well deserved 5 minutes break$(tput sgr0)" && echo "============================================================================";
 notify-send "Your pomodoro session just ended. Have a well deserved 5 minutes break." 
 # test loop
 for x in {1..100} ; do
     prog "$x" still working...
-    sleep 0.1   # do some work here
+    sleep 3   # do some work here
 done ; echo
 sleep $rest_time && echo "===============" && echo "$(tput setaf 1)Back to work$(tput sgr0)" && echo "===============";
 notify-send "Back to work =)"
@@ -49,14 +49,14 @@ while [[ $answervar = 'y' ]]; do
 	# test loop
 	for x in {1..100} ; do
 	    prog "$x" still working...
-	    sleep 0.1   # do some work here
+	    sleep 1800   # do some work here
 	done ; echo
 	echo "============================================================================" && echo "$(tput setaf 2)Your pomodoro session just ended. Have a well deserved 5 minutes break$(tput sgr0)" && echo "============================================================================";
 	notify-send "Your pomodoro session just ended. Have a well deserved 5 minutes break." 
 	# test loop
 	for x in {1..100} ; do
 	    prog "$x" still working...
-	    sleep 0.1   # do some work here
+	    sleep 3   # do some work here
 	done ; echo
 	sleep $rest_time && echo "===============" && echo "$(tput setaf 1)Back to work$(tput sgr0)" && echo "===============";
 	notify-send "Back to work =)"
